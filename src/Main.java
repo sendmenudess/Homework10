@@ -23,28 +23,28 @@ public class Main {
             System.out.printf("%d год не является високосным\n", y);
     }
 
-    public static void checkDevice(byte a, int y) {
+    public static void checkDevice(byte clientOs, int year) {
         int currentYear = LocalDate.now().getYear();
-        if (a == 0) {
-            if (y < currentYear)
+        if (clientOs == 0) {
+            if (year < currentYear)
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             else
                 System.out.println("Установите версию приложения для iOS по ссылке");
         } else {
-            if (y < currentYear)
+            if (year < currentYear)
                 System.out.println("Установите облегченную версию приложения для Android по ссылке");
             else
                 System.out.println("Установите версию приложения для Android по ссылке");
         }
     }
 
-    public static int checkDeliveryDays(int a) {
+    public static int checkDeliveryDays(int deliveryDistance) {
         int days = 1;
-        if (a < 20) {
+        if (deliveryDistance < 20) {
             return days;
-        } else if (a >= 20 && a < 60) {
+        } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
             return days += 1;
-        } else if (a >= 60 && a < 100) {
+        } else if (deliveryDistance >= 60 && deliveryDistance < 100) {
             return days += 2;
         }
         else {
